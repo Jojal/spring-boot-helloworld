@@ -17,8 +17,6 @@ pipeline {
             steps {
                 echo 'Deploying....'
 
-                sh 'docker build -t jojal/spring-example:latest .'
-
             }
         }
     }
