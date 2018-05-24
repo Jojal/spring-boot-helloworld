@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'echo user is $USER'
-                sh 'docker build -t jojal/spring-example:latest .'
+                sh 'sudo docker build -t jojal/spring-example:latest .'
 
             }
         }
