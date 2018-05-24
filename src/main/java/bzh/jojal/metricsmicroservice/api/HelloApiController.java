@@ -9,6 +9,6 @@ public class HelloApiController {
 
     @GetMapping("/")
     public String home() {
-        return "Welcome world !";
+        return "Welcome world on pipeline branch !";
     }
 }
