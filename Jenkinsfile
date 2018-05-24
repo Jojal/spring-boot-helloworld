@@ -16,6 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh 'echo user is $USER'
                 sh 'docker build -t jojal/spring-example:latest .'
 
             }
