@@ -13,12 +13,11 @@ pipeline {
                 echo 'Testing..'
             }
         }
-
-
-        node('docker') {
-            stage('Deploy') {
-                steps {
+        stage('Deploy') {
+            steps {
+                node('docker') {
                     echo 'Deploying....'
+
                     sh 'docker build -t jojal/spring-example:latest .'
                     sh 'docker run -d -p 8081:8080 jojal/spring-example:latest'
                 }
