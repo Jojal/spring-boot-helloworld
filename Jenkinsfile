@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    def container
     stages {
         stage('Build') {
             steps {
@@ -26,17 +25,6 @@ pipeline {
 
                     container = image.run('-p 8081:8080')
                 }
-            }
-        }
-
-        stage('Validation') {
-
-            try {
-                input message: "Is it ok ? ", ok : 'Good'
-            }
-            finally {
-
-                container.stop
             }
         }
     }
