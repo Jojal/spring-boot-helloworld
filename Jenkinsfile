@@ -16,11 +16,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'echo user is $USER'
-                sh 'whoami'
-                sh 'export USER=jenkins'
-                sh 'docker build -t jojal/spring-example:latest .'
-
+                def customImage = docker.build("jojal/spring-example:latest")
+                sh "docker run -p 8081:8080 jojal/spring-example:latest"
             }
         }
     }
