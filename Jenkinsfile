@@ -18,7 +18,6 @@ pipeline {
                 echo 'Deploying....'
                 script {
                     docker.build("jojal/spring-example:latest")
-                    sh "docker run -p 8081:8080 jojal/spring-example:latest"
                 }
             }
         }
