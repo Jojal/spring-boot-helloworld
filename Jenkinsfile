@@ -17,6 +17,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'echo user is $USER'
+                sh 'export USER=jenkins'
                 sh 'docker build -t jojal/spring-example:latest .'
 
             }
