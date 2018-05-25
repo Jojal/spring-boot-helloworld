@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'whoamis'
+                sh 'whoami'
                 sh 'docker container ps'
                 script {
                     docker.build("jojal/spring-example:latest")
