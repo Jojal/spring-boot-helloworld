@@ -19,7 +19,7 @@ pipeline {
                 script {
                     docker.build("jojal/spring-example:latest")
                     docker.image('jojal/spring-example:latest').withRun('-p 8081:8080') {c ->
-                        sh "curl -i http://${hostIp(c)}:8080/"
+                        //sh "curl -i http://${hostIp(c)}:8080/"
                     }
                 }
             }
