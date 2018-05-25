@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                def customImage = docker.build("jojal/spring-example:latest")
+                docker.build("jojal/spring-example:latest")
                 sh "docker run -p 8081:8080 jojal/spring-example:latest"
             }
         }
